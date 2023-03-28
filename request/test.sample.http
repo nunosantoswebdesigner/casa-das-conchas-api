@@ -1,0 +1,38 @@
+@host = localhost:5000/api/shells
+
+##### GET ALL SHELLS
+GET http://{{host}}/ HTTP/1.1
+content-type: application/json
+
+##### POST A SHELL
+POST http://{{host}}/ HTTP/1.1
+content-type: application/json
+
+{
+  id: "5f708b4d06484e0ba0c3f360",
+  name: "Shell name here",
+  prompt: "Shell description here",
+  photo: { type: String, required: true },
+  qrcode: { type: String, required: false },
+  location: "Shell Location here",
+  category: "Shell Location here",
+  createdAt: 'created_at',
+  updatedAt: 'updated_at'
+}
+
+##### GET A SINGLE SHELL
+GET http://{{host}}/5f708b4d06484e0ba0c3f360 HTTP/1.1
+content-type: application/json
+
+##### PUT A SINGLE SHELL (EDIT)
+PUT http://{{host}}/5f708b4d06484e0ba0c3f360 HTTP/1.1
+content-type: application/json
+
+{
+  "question": "In un ospite non autosufficente e affetto da HIV, le urine e le feci devono: ",
+  "correct_answer": "essere trattate come tutte le altre escrezioni emesse da pazienti sani"
+}
+
+##### DELETE A SINGLE SHELL
+DELETE http://{{host}}/Yj03IbpLHD3MtnRaZEX5 HTTP/1.1
+content-type: application/json
